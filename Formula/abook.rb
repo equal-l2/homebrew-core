@@ -7,7 +7,8 @@ class Abook < Formula
   head "https://git.code.sf.net/p/abook/git.git"
 
   livecheck do
-    url :homepage
+    # Use http because https will be redirected to http
+    url "http://abook.sourceforge.io/"
     strategy :page_match
     regex(/href=.*?abook[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
