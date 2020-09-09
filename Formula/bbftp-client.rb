@@ -7,7 +7,8 @@ class BbftpClient < Formula
   revision 3
 
   livecheck do
-    url "https://software.in2p3.fr/bbftp/download.html"
+    # Use http because https will be redirected to http
+    url "http://software.in2p3.fr/bbftp/download.html"
     regex(/href=.*?bbftp-client[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
