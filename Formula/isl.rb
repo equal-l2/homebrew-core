@@ -13,7 +13,8 @@ class Isl < Formula
   license "MIT"
 
   livecheck do
-    url :homepage
+    # Use http because https will be redirected to http
+    url "http://isl.gforge.inria.fr/"
     regex(/href=.*?isl[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
