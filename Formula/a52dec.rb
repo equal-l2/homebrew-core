@@ -6,7 +6,8 @@ class A52dec < Formula
   license "GPL-2.0"
 
   livecheck do
-    url "https://liba52.sourceforge.io/downloads.html"
+    # Use http because https will be redirected to http
+    url "http://liba52.sourceforge.io/downloads.html"
     strategy :page_match
     regex(/href=.*?a52dec[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
