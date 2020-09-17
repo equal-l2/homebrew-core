@@ -20,8 +20,6 @@ class Colordiff < Formula
 
   depends_on "coreutils" => :build # GNU install
 
-  conflicts_with "cdiff", because: "both install `cdiff` binaries"
-
   def install
     man1.mkpath
     system "make", "INSTALL=ginstall",
