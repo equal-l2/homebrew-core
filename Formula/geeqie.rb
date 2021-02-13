@@ -21,10 +21,8 @@ class Geeqie < Formula
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme"
-  depends_on "atk"
-  depends_on "cairo"
+  depends_on "clutter-gtk"
   depends_on "exiv2"
-  depends_on "gdk-pixbuf"
   depends_on "gettext"
   depends_on "glib"
   depends_on "gtk+3"
@@ -33,10 +31,10 @@ class Geeqie < Formula
   depends_on "libtiff"
   depends_on "libx11"
   depends_on "little-cms2"
-  depends_on "pango"
 
   def install
     ENV["NOCONFIGURE"] = "yes"
+    ENV.append "LDFLAGS", "-lX11"
     system "./autogen.sh" # Seems to struggle to find GTK headers without this
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
